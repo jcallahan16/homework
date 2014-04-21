@@ -1,1 +1,26 @@
-<h1> book list </h1>
+
+<% all_books = Book.read %>
+<table>
+<style>
+table,th,td
+{
+border:1px solid gray; border-collapse:collapse; padding:5px; width:500px; font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+</style>
+<% count = 4%>
+<tr>
+<td> <p><b>Title</b></p></td>
+<td><p><b>Author</b></p></td>
+</tr>
+<tr>
+<% all_books.each do |book|  %> 
+<td>
+<%= book["title"] %> </td>
+<td><%= book["author"] %> </td>
+</tr>
+<% end %>
+
+<h1>Book List</h1>
+
+
+
