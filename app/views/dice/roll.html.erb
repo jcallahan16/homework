@@ -1,23 +1,24 @@
-<h1> Dice Roll </h1>
-
-<% array = [0]%>
-<% array2 = [0]%>
-<%array[0]=rand(1..6)%>
-<%array2[0]=rand(1..6)%>
-<p> <%= array %> <%= array2 %> </p> 
+<p> <FONT FACE="impact"> <FONT SIZE="6"> <div align="center"> Dice Roll </div></FONT></p>
 
 
-
-<html>
-<body>
 <% images  = ["http://kiei925.com/images/dice/1.png/", "http://kiei925.com/images/dice/2.png/", "http://kiei925.com/images/dice/3.png/", "http://kiei925.com/images/dice/4.png/", "http://kiei925.com/images/dice/5.png/", "http://kiei925.com/images/dice/6.png/"] %>
             <% random_no = rand(6) %>
                <% random_no2 = rand(6) %>
             <% random_image = images[random_no] %>
   <% random_image2 = images[random_no2] %>
 
-<img src="<%= random_image%>"> <img src="<%= random_image2%>">
+<p>
+ <div align="center">
+<table>
+<tr>
+<td>
+ <div align="center" style="border:1px solid red">
+
+<%= random_no +1%> </div></td> <td> <div align="center" style="border:1px solid red"> <%= random_no2 +1%> </div></td> </tr>
+<tr> <td>
+<img src="<%= random_image%>"> </td> <td> <img src="<%= random_image2%>"> </td> </tr> </table>
 
 
 </body>
 </html>
+</p>
