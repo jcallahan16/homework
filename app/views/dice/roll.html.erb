@@ -1,1 +1,23 @@
-<h1> roll </h1>
+<h1> Dice Roll </h1>
+
+<% array = [0]%>
+<% array2 = [0]%>
+<%array[0]=rand(1..6)%>
+<%array2[0]=rand(1..6)%>
+<p> <%= array %> <%= array2 %> </p> 
+
+
+
+<html>
+<body>
+<% images  = ["http://kiei925.com/images/dice/1.png/", "http://kiei925.com/images/dice/2.png/", "http://kiei925.com/images/dice/3.png/", "http://kiei925.com/images/dice/4.png/", "http://kiei925.com/images/dice/5.png/", "http://kiei925.com/images/dice/6.png/"] %>
+            <% random_no = rand(6) %>
+               <% random_no2 = rand(6) %>
+            <% random_image = images[random_no] %>
+  <% random_image2 = images[random_no2] %>
+
+<img src="<%= random_image%>"> <img src="<%= random_image2%>">
+
+
+</body>
+</html>
