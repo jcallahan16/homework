@@ -2,7 +2,17 @@
 #
 Book:
    - title: string
-   - author: string
+   - author_id: integer
+   - price: integer
+
+Review:
+   - book_id: integer
+   - rating: integer
+   - comment: text
+
+
+Author:
+   - name: string
 #   - summary: text
 #   - hardcover: boolean
 #
