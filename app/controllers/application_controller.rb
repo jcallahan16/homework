@@ -1,8 +1,6 @@
 class ApplicationController < ActionController::Base
   
-@images  = ["http://kiei925.com/images/dice/1.png/", "http://kiei925.com/images/dice/2.png/", "http://kiei925.com/images/dice/3.png/"]
-            @random_no = rand(3)
-            @random_image = @images[@random_no]
+
 
 
   # Prevent CSRF attacks by raising an exception.
