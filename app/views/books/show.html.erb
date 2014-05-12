@@ -1,0 +1,29 @@
+<% the_book_id = params["id"] %>
+
+<% book_id = params["the_book_id"] %>
+<% book = Book.read(the_book_id) %>
+<% reviews = Review.where("book_id" => the_book_id) %> 
+<% avg = Review.where("book_id" => "the_book_id").average("rating") %>
+
+
+<h2> <%= book["title"] %> ($<%= book["price"] %>) </h2>
+
+<h2>Reviews</h2> 
+
+(Average rating: <%= review["rating"] %>)
+
+
+<% reviews.each do |review| %>
+<li>
+	<%= review["comment"] %>
+	-<%= review["rating"] %> stars 
+  <% end %>
+</li>
+<!-- 1 star: http://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/1_stars.svg/535px-1_stars.svg.png -->
+<!-- 2 stars: http://upload.wikimedia.org/wikipedia/commons/thumb/8/88/2_stars.svg/535px-2_stars.svg.png -->
+
+<!-- 3 stars: http://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/3_stars.svg/535px-3_stars.svg.png -->
+
+<!-- 4 stars: http://upload.wikimedia.org/wikipedia/commons/1/1b/4_stars.svg -->
+
+<!-- 5 stars: http://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/5_stars.svg/535px-5_stars.svg.png -->

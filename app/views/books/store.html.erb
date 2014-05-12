@@ -1,0 +1,24 @@
+<h1> Book Store </h1>
+
+<% all_books = Book.read %>
+
+<ul>
+
+<% all_books.each do |book| %>
+
+	<% review = Review.find_by("id"=> book["book_id"]) %>
+	<% rating_average = Review.read("book_id").average("rating")%>
+	
+
+   <li>
+<%= link_to (book["title"]), "/books/#{book["id"]}" %> 
+
+
+
+  </li>
+<% end %>
+
+<%= image_tag("http://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/1_stars.svg/535px-1_stars.svg.png") %>
+
+
+	
