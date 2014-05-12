@@ -2,19 +2,17 @@
 
 <% all_books = Book.read %>
 
-
 <% all_books.each do |book| %>
 
-	<% avg = Review.where("book_id" => book["id"]).average("rating")%>
+<% avg = Review.where("book_id" => book["id"]).average("rating")%>
 
-   <li>
-<%= link_to (book["title"]), "/books/#{book["id"]}" %> 
-(<% if avg.blank? %> <i>Not yet rated </i><% else %> <%= avg.round(2) %> stars
-<% end %>) </h2>
+<li>
+	<%= link_to (book["title"]), "/books/#{book["id"]}" %> 
+	(<% if avg.blank? %> <i>Not yet rated </i><% else %> <%= avg.round(2) %> stars
+	<% end %>) 
+</li>
 
-  </li>
-
-<% end %>
+	<% end %>
 
 
 
