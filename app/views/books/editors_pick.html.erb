@@ -1,7 +1,24 @@
 <h1>Editor's Pick</h1>
- 
 
-  <% editors_pick = Book.where("title" => "A Game of Thrones") %>
-  <% editors_pick = Book.first %>
+<% the_book_id = params["id"] %>
 
-  <%= link_to (editors_pick["title"]), "/books/#{editors_pick["id"]}" %> 
+<% book_id = params["the_book_id"] %>
+
+<% book = Book.read(the_book_id) %>
+<% reviews = Review.where("book_id" => the_book_id) %>
+
+ <% average = Review.group("book_id" => the_book_id).order("avg(rating) desc")%>
+  
+<% average.each do |title| %>
+<% the_book = Book.find_by("id" => title["book_id"])%>
+<h2> <%= link_to (the_book["title"]), "/books/#{the_book["id"]}" %> </h2>
+
+<%= image_tag "http://g.christianbook.com/g/ebooks/covers/w185/1/1122416_w185.png", "width" => "200" %>
+
+<% end %>
+
+
+
+
+
+

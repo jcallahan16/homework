@@ -3,17 +3,18 @@
 <% book_id = params["the_book_id"] %>
 <% book = Book.read(the_book_id) %>
 <% reviews = Review.where("book_id" => the_book_id) %> 
-<% avg = Review.where("book_id" => "the_book_id").average("rating") %>
+<% avg = Review.where("book_id" => the_book_id).average("rating") %>
+
 
 
 <h2> <%= book["title"] %> ($<%= book["price"] %>) </h2>
 
-<h2>Reviews</h2> 
-
-(Average rating: <%= review["rating"] %>)
+<h2>Reviews (Average rating: <% if avg.blank? %> <i>Not yet rated </i><% else %> <%= avg.round(2) %> stars
+<% end %>) </h2>
 
 
 <% reviews.each do |review| %>
+
 <li>
 	<%= review["comment"] %>
 	-<%= review["rating"] %> stars 
